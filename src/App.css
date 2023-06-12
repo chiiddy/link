@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+.dot {
+  height: 3vh;
+  margin-top: 0.3rem;
+  background-color: #EBECEC;
+  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 83rem;
+}
+.documents {
+  margin-left: 1.8rem;
+}
+.shared {
+  display: flex;
+  gap: 78em;
+}
+.second-header{
+  margin-left: 2rem;
+}
+.download {
+  color: #0056b3;
+  cursor: pointer;
+}
+.files {
+  display: flex;
+  gap: 76.70rem;
+  margin-left: 6rem;
+}
+.pdf {
+  height: 2.7vh;
+}
+.specification {
+  height: 2.4vh;
+  width: 1rem;
+}
+.dispersion {
+  border: solid;
+  border-width: 0.001px;
+  width: 14.3rem;
+  border-radius: 0.39rem;
+  cursor: pointer;
+}
+.drawing {
+  border: solid;
+  border-width: 0.001px;
+  width: 15.2rem;
+  border-radius: 0.39rem;
+  cursor: pointer;
+}
+.purhase {
+  border: solid;
+  border-width: 0.001px;
+  width: 15.2rem;
+  border-radius: 0.39rem;
+  cursor: pointer;
+}
+.specificatin {
+  border: solid;
+  border-width: 0.001px;
+  width: 15.2rem;
+  border-radius: 0.44rem;
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  gap: 2rem;
+  margin-left: 13rem;
+}
+.modal {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 9rem;
+  box-sizing: border-box;
+  background-color:#FFF
 }
-
-.App-link {
-  color: #61dafb;
+.closee {
+  height: 2.1vh;
+  width: 1rem;
+  display: flex;
+  margin-left: 23rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.emailSearch {
+  width: 20.2rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+}
+.password {
+  width: 20.2rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+}
+.downloads {
+  background-color: #005da6;
+  color: white!important;
+  padding: .5rem 1rem!important;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.access {
+  color:#005da6
+  
 }
