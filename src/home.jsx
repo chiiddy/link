@@ -49,42 +49,6 @@ export default function Home() {
       .catch((err) => {});
   };
 
-<<<<<<< HEAD
-
-export default function Home(onSave) {
-    const [email, setEmail] =  useState("");
-    const [password, setPassword] = useState("");
-    const [modal, setModal] = useState(false);
-    const openModal = () => {
-        setModal(true);
-      };
-    
-      const closeModal = () => {
-        setModal(false);
-      };
-      const onChangeEmail = (e) => {
-        setEmail(e.target.value);
-      };
-      const onChangePassword = (e) => {
-        setPassword(e.target.value);
-      };
-      const onSubmit = (e) => {
-        e.preventDefault();
-        if(!email && !password) {
-            alert('email required and correct pasword');
-        }else if (!email && password) {
-            alert('email required')
-        }else if (email && !password) {
-            alert('password required')
-        }else {
-            onSave({email, password})
-        }
-        setEmail("")
-        setPassword("");
-      };
-   
-=======
->>>>>>> 286d63e79dc061f53ce592a8491a1a498a759034
   return (
     <div>
       <div className="shared">
