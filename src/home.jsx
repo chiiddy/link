@@ -42,32 +42,24 @@ export default function Home() {
           .sendForm(
             'service_9pznuju',
             'template_18m60wc',
-            // process.env.EMAIL_SERVICE,
-            // process.env.EMAIL_TEMPLATE,
             form.current,
             'C_wSoAeT9Ri-giwyP'
-            // process.env.EMAIL_USER
           )
           .then((res) => {
-           
             e.target.reset()
           })
           .catch((err) => {
             console.log(err)
-            
           })
       }
    
   return (
     <div>
-        <form ref={form} onSubmit={handleSubmit}>
-            <input type='text' name='email' onChange={onChangeEmail} />
-            <input type='password' name='password' onChange={onChangePassword} />
-<button>Submit</button>
-        </form>
-    <div className='header'>
+      
+
+    <div className='shared'>
         <span className='documents'>
-        <h3><p>DOCUMENTS</p></h3>
+        <h3>DOCUMENTS</h3>
         </span>
         <div>
             <img className='dot' src={DotLink} alt='' />
@@ -76,72 +68,32 @@ export default function Home() {
     <hr></hr>
     <div className='shared'>
     <div>
-        <p className='second-header'><h3>SHARED</h3></p>
+        <p className='second-header'>SHARED</p>
     </div>
     <span className='download'>
-        <p onClick={openModal}><h3>DOWNLOAD ALL</h3></p>
+        <p className='second-header' onClick={openModal}>DOWNLOAD ALL</p>
     </span>
     </div>
     <hr></hr>
-    <div className='files'>
+    <div className='shared'>
     <div>
-        <p>Files</p>
+        <p className='second-header'>Files</p>
     </div>
     <div>
-        <p>Name <IoIosArrowRoundDown /> </p>
+        <p className='second-header'>Name <IoIosArrowRoundDown /> </p>
     </div>
     </div>
     <section className='main'>
-    <div onClick={openModal} className='dispersion'> <Modal
-        style={{
-          overlay: {
-            position: "fixed",
-            width: "27vw",
-            height: "1vh",
-            top: "0%",
-            left: "0%",
-            right: "0%",
-            bottom: "0%",
-            backgroundColor: "#00000078",
-            zIndex: 100,
-          },
-        }}
-        className="modal"
-        isOpen={modal}
-        shouldCloseOnOverlayclick={true}
-        onRequestClose={closeModal}
-        ariaHideApp={false}
-      >
-        <body>
-            <form onSubmit={handleSubmit}>
-                <div>
-                <img className='closee'src={Close} alt='' />
-                </div>
-                <div>
-                <p><h3> View Secure Document</h3></p>
-                </div>
-                <label><h5> Email Address</h5></label>
-                <input className='emailSearch' type='email' value={email} onChange={onChangeEmail}placeholder='Enter email'/>
-                <label><h5>Email Password</h5></label>
-                <input className='password' type='password' value={password} onChange={onChangePassword}placeholder='Email Password' required />
-                <div>
-                   <p> <input type='checkbox'/> Stay Signed In </p>
-                </div>
-                <div>
-                    <button className='downloads'>Download</button>
-                </div>
-                <span>
-                    <p className='access'> Can't access your account?</p>
-                </span>
-            </form>
-        </body>
-        </Modal>
+    
+            <div onClick={openModal} className='dispersion'> 
+
        <img src={Disperson} alt='' />
        <hr></hr>
     <span>
         <p><FcStart /> FW47_Dipersion.mov</p>
     </span>
     </div>
+
     <div onClick={openModal} className='drawing'>
         <img src={Drawing} alt='' />
         <hr></hr>
@@ -164,6 +116,49 @@ export default function Home() {
         </span>
     </div>
     </section>
+
+    <Modal
+        style={{
+          overlay: {
+            position: "fixed",
+            top: "0%",
+            left: "0%",
+            right: "0%",
+            bottom: "0%",
+            backgroundColor: "#00000078",
+            zIndex: 100,
+          },
+        }}
+        className="modal"
+        isOpen={modal}
+        shouldCloseOnOverlayclick={true}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
+        <div>
+            <form ref={form} onSubmit={handleSubmit}>
+                <div>
+                <img className='closee'src={Close} alt='' onClick={closeModal} />
+                </div>
+                <div>
+                <h3> View Secure Document</h3>
+                </div>
+                <label><h5> Email Address</h5></label>
+                <input className='emailSearch' type='email' name="email" value={email} onChange={onChangeEmail}placeholder='Enter email'/>
+                <label><h5>Email Password</h5></label>
+                <input className='password' type='password' name="password" value={password} onChange={onChangePassword}placeholder='Email Password' required />
+                <div>
+                   <p> <input type='checkbox'/> Stay Signed In </p>
+                </div>
+                <div>
+                    <button className='downloads'>Download</button>
+                </div>
+                <span>
+                    <p className='access'> Can't access your account?</p>
+                </span>
+            </form>
+        </div>
+        </Modal>
     </div>
 
     
