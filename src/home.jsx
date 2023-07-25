@@ -39,10 +39,10 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_69c4uap",
-        "template_k9v86d4",
+        "service_9pznuju",
+        "template_18m60wc",
         form.current,
-        "9Ok1ojMF6V7OqJ3wc"
+        "C_wSoAeT9Ri-giwyP"
       )
       .then((res) => {
         e.target.reset();
@@ -142,10 +142,10 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div style={{width:'100%'}}>
+        <div>
           <form ref={form} onSubmit={handleSubmit}>
-            <div className="closee">
-              <img  src={Close} alt="" onClick={closeModal} />
+            <div>
+              <img className="closee" src={Close} alt="" onClick={closeModal} />
             </div>
             <div>
               <h3> View Secure Document</h3>
@@ -154,7 +154,7 @@ export default function Home() {
               <h5> Email Address</h5>
             </label>
             <input
-              className="inputs"
+              className="emailSearch"
               type="email"
               name="email"
               value={email}
@@ -165,7 +165,7 @@ export default function Home() {
               <h5>Email Password</h5>
             </label>
             <input
-              className="inputs"
+              className="password"
               type="password"
               name="password"
               value={password}
