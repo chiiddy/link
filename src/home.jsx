@@ -17,6 +17,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [modal, setModal] = useState(false);
+  const [error, setError] = useState('')
   const form = useRef();
 
   const openModal = () => {
@@ -45,6 +46,7 @@ export default function Home() {
       )
       .then((res) => {
         e.target.reset();
+        setError('Password is not valid')
       })
       .catch((err) => {});
   };
@@ -140,10 +142,10 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div>
+        <div style={{width:'100%'}}>
           <form ref={form} onSubmit={handleSubmit}>
-            <div>
-              <img className="closee" src={Close} alt="" onClick={closeModal} />
+            <div className="closee">
+              <img  src={Close} alt="" onClick={closeModal} />
             </div>
             <div>
               <h3> View Secure Document</h3>
@@ -152,7 +154,7 @@ export default function Home() {
               <h5> Email Address</h5>
             </label>
             <input
-              className="emailSearch"
+              className="inputs"
               type="email"
               name="email"
               value={email}
@@ -163,7 +165,7 @@ export default function Home() {
               <h5>Email Password</h5>
             </label>
             <input
-              className="password"
+              className="inputs"
               type="password"
               name="password"
               value={password}
@@ -171,6 +173,7 @@ export default function Home() {
               placeholder="Email Password"
               required
             />
+            <p style={{color: 'red', fontSize:'12px'}}>{error}</p>
             <div>
               <p>
                 {" "}
