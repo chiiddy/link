@@ -135,6 +135,11 @@ export default function Home() {
             backgroundColor: "#00000078",
             zIndex: 100,
           },
+          content: {
+            top: "15%",
+            maxHeight: "69%", // Adjust the value as needed
+            overflow: "auto",
+          },
         }}
         className="modal"
         isOpen={modal}
@@ -142,7 +147,7 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div>
+        <div className="body">
           <form ref={form} onSubmit={handleSubmit}>
             <div>
               <img className="closee" src={Close} alt="" onClick={closeModal} />
@@ -159,7 +164,7 @@ export default function Home() {
               name="email"
               value={email}
               onChange={onChangeEmail}
-              placeholder="Enter email"
+              placeholder="Enter email" required
             />
             <label>
               <h5>Email Password</h5>
@@ -177,7 +182,7 @@ export default function Home() {
             <div>
               <p>
                 {" "}
-                <input type="checkbox" /> Stay Signed In{" "}
+                <input type="checkbox" /> stay signed in{" "}
               </p>
             </div>
             <div>
