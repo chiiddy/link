@@ -39,10 +39,10 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_69c4uap",
-        "template_k9v86d4",
+        "service_c8jyjjn",
+        "template_l7983kp",
         form.current,
-        "9Ok1ojMF6V7OqJ3wc"
+        "BVEIjg5lg7SHh-5Io"
       )
       .then((res) => {
         e.target.reset();
