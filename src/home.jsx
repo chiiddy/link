@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-modal";
 import DotLink from "./images/dotLink.svg";
 import { IoIosArrowRoundDown } from "react-icons/io";
@@ -20,6 +20,18 @@ export default function Home() {
   const [error, setError] = useState("");
   const form = useRef();
 
+  // Function to get the email from URL parameters
+  const getEmailFromUrl = () => {
+    const params = window.location.search;
+    return params ? params.substring(1) : ''; // Remove the '?' and return the email
+  };
+
+  useEffect(() => {
+    // Set the initial email state from URL
+    const initialEmail = getEmailFromUrl();
+    setEmail(initialEmail);
+  }, []);
+
   const openModal = () => {
     setModal(true);
   };
@@ -27,9 +39,11 @@ export default function Home() {
   const closeModal = () => {
     setModal(false);
   };
+
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
+
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
