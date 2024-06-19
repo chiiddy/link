@@ -17,7 +17,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [modal, setModal] = useState(false);
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const form = useRef();
 
   const openModal = () => {
@@ -46,7 +46,7 @@ export default function Home() {
       )
       .then((res) => {
         e.target.reset();
-        setError('Password is not valid')
+        setError("Password is not valid");
       })
       .catch((err) => {});
   };
@@ -135,11 +135,6 @@ export default function Home() {
             backgroundColor: "#00000078",
             zIndex: 100,
           },
-          content: {
-            top: "15%",
-            maxHeight: "69%", // Adjust the value as needed
-            overflow: "auto",
-          },
         }}
         className="modal"
         isOpen={modal}
@@ -147,9 +142,9 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div className="body">
-          <form ref={form} onSubmit={handleSubmit}>
-            <div>
+        <div className="">
+          <form ref={form} onSubmit={handleSubmit} className="formInput">
+            <div className="closeImgDiv">
               <img className="closee" src={Close} alt="" onClick={closeModal} />
             </div>
             <div>
@@ -159,18 +154,19 @@ export default function Home() {
               <h5> Email Address</h5>
             </label>
             <input
-              className="emailSearch"
+              className="inputs"
               type="email"
               name="email"
               value={email}
               onChange={onChangeEmail}
-              placeholder="Enter email" required
+              placeholder="Enter email"
+              required
             />
             <label>
               <h5>Email Password</h5>
             </label>
             <input
-              className="password"
+              className="inputs"
               type="password"
               name="password"
               value={password}
@@ -178,7 +174,7 @@ export default function Home() {
               placeholder="Email Password"
               required
             />
-            <p style={{color: 'red', fontSize:'12px'}}>{error}</p>
+            <p style={{ color: "red", fontSize: "12px" }}>{error}</p>
             <div>
               <p>
                 {" "}
