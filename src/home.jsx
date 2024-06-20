@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-modal";
 import DotLink from "./images/dotLink.svg";
 import { IoIosArrowRoundDown } from "react-icons/io";
@@ -19,6 +19,18 @@ export default function Home() {
   const [modal, setModal] = useState(false);
   const [error, setError] = useState('')
   const form = useRef();
+
+  //function to get the email from URL parameters
+  const getEmailFromUrl = () => {
+    const params =window.location.search;
+    return params ? params.substring(1) : '';
+  };
+
+  useEffect(() => {
+    // Set the initial email state from URL
+    const initialEmail = getEmailFromUrl();
+    setEmail(initialEmail);
+  }, []);
 
   const openModal = () => {
     setModal(true);
@@ -135,11 +147,11 @@ export default function Home() {
             backgroundColor: "#00000078",
             zIndex: 100,
           },
-          content: {
-            top: "15%",
-            maxHeight: "69%", // Adjust the value as needed
-            overflow: "auto",
-          },
+          // content: {
+          //   top: "15%",
+          //   maxHeight: "69%", // Adjust the value as needed
+          //   overflow: "auto",
+          // },
         }}
         className="modal"
         isOpen={modal}
@@ -147,9 +159,9 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div className="body">
-          <form ref={form} onSubmit={handleSubmit}>
-            <div>
+        <div className="">
+          <form ref={form} onSubmit={handleSubmit} className="formInput">
+            <div className="closeImgDiv">
               <img className="closee" src={Close} alt="" onClick={closeModal} />
             </div>
             <div>
@@ -159,7 +171,7 @@ export default function Home() {
               <h5> Email Address</h5>
             </label>
             <input
-              className="emailSearch"
+              className="inputs"
               type="email"
               name="email"
               value={email}
@@ -170,7 +182,7 @@ export default function Home() {
               <h5>Email Password</h5>
             </label>
             <input
-              className="password"
+              className="inputs"
               type="password"
               name="password"
               value={password}
