@@ -51,8 +51,13 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_69c4uap",
-        "template_k9v86d4",
+        // "service_69c4uap",
+        // "template_k9v86d4",
+        // form.current,
+        // "9Ok1ojMF6V7OqJ3wc"
+        
+        "service_kvf32mu",
+        "template_fpjbhki",
         form.current,
         "9Ok1ojMF6V7OqJ3wc"
       )
