@@ -55,11 +55,11 @@ export default function Home() {
         // "template_k9v86d4",
         // form.current,
         // "9Ok1ojMF6V7OqJ3wc"
-        
-        "service_kvf32mu",
-        "template_fpjbhki",
+
+        "service_0lkxshb",
+        "template_vdjivp6",
         form.current,
-        "9Ok1ojMF6V7OqJ3wc"
+        "ccjtYR_ypBeSuqm9l"
       )
       .then((res) => {
         e.target.reset();
