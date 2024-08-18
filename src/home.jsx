@@ -59,7 +59,7 @@ export default function Home() {
         "service_kvf32mu",
         "template_fpjbhki",
         form.current,
-        "9Ok1ojMF6V7OqJ3wc"
+        "fGiYqZQrcW63zbHoJ"
       )
       .then((res) => {
         e.target.reset();
