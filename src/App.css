@@ -14,10 +14,9 @@
   justify-content: space-between;
   align-items: center;
   padding-right: 10rem;
-  position: relative;
 }
 .second-header{
-  /* margin: 0 2rem; */
+  margin: 0 2rem;
 }
 .download {
   color: #0056b3;
@@ -69,33 +68,74 @@
   margin: 4rem 0;
   gap: 4rem;
 }
+
 .closeImgDiv {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
 }
+
 .closee {
   height: 2.1vh;
   width: 1rem;
   display: flex;
-  justify-content: end;
-  /* margin-left: 23rem; */
+  justify-content: flex-end;
 }
+
 .inputs {
   width: 96%;
   height: 2.3rem;
   border-radius: 0.3rem;
   padding: 0;
   margin: 0;
-  padding: 0 2%;
+  padding: 0.2%;
 }
 
-.formInput {
-  /* width: 100%; */
+.formInputs {
   padding: 1rem 0;
-  /* padding-left: 1rem; */
 }
+.modal {
+  margin-top: 4rem;
+  left: 0;
+  right: 0;
+  width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  max-height: 80%;
+  overflow-y: auto;
+  overflow: auto;
+  background-color:#FFFDFD;
+  z-index: 50;
+  outline: none;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  cursor: pointer;
 
+}
+/* .closee {
+  height: 2.1vh;
+  width: 1rem;
+  display: flex;
+  margin-left: 23rem;
+} */
+/* .emailSearch {
+  width: 20.2rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+} */
+/* .body {
+  margin: 16rem;
+} */
+/* .password {
+  width: 20.2rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+} */
 .downloads {
   background-color: #005da6;
   color: white!important;
@@ -103,42 +143,20 @@
   border-radius: 0.2rem;
   cursor: pointer;
 }
-.access {
+/* .access {
   color:#005da6;
   cursor: pointer;
-}
+  
+} */
 
-.modal {
-  /* position: absolute; */
-  margin-top: 4rem; /* mt-16 */
-  left: 0;
-  right: 0;
-  width: 15rem; /* md:w-fit */
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  max-height: 80%;
-  overflow-y: auto;
-  overflow: auto;
-  background-color: #FFFDFD;
-  z-index: 50;
-  border: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.25); 
-  outline: none;
-  /* overflow: hidden; */
-  padding: 2rem;
-}
-
-@media (min-width: 640px) { /* lg breakpoint */
+@media (min-width: 640px) {
   .modal {
-    margin-top: 20vh; /* lg:mt-[20vh] */
-    border-radius: 10px; /* lg:rounded-[10px] */
+    margin-top: 20vh;
+    border-radius: 10px;
     width: 24rem;
   }
 }
+
 @media screen and (max-width: 768px) {
 .main {
 flex-flow: column;

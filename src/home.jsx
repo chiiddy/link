@@ -17,13 +17,13 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [modal, setModal] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('')
   const form = useRef();
 
-  // Function to get the email from URL parameters
+  //function to get the email from URL parameters
   const getEmailFromUrl = () => {
-    const params = window.location.search;
-    return params ? params.substring(1) : ''; // Remove the '?' and return the email
+    const params =window.location.search;
+    return params ? params.substring(1) : '';
   };
 
   useEffect(() => {
@@ -39,11 +39,9 @@ export default function Home() {
   const closeModal = () => {
     setModal(false);
   };
-
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
-
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -53,6 +51,11 @@ export default function Home() {
 
     emailjs
       .sendForm(
+        // "service_69c4uap",
+        // "template_k9v86d4",
+        // form.current,
+        // "9Ok1ojMF6V7OqJ3wc"
+
         "service_c8jyjjn",
         "template_l7983kp",
         form.current,
@@ -60,7 +63,7 @@ export default function Home() {
       )
       .then((res) => {
         e.target.reset();
-        setError("Password is not valid");
+        setError('Password is not valid')
       })
       .catch((err) => {});
   };
@@ -149,6 +152,11 @@ export default function Home() {
             backgroundColor: "#00000078",
             zIndex: 100,
           },
+          // content: {
+          //   top: "15%",
+          //   maxHeight: "69%", // Adjust the value as needed
+          //   overflow: "auto",
+          // },
         }}
         className="modal"
         isOpen={modal}
@@ -173,8 +181,7 @@ export default function Home() {
               name="email"
               value={email}
               onChange={onChangeEmail}
-              placeholder="Enter email"
-              required
+              placeholder="Enter email" required
             />
             <label>
               <h5>Email Password</h5>
@@ -188,7 +195,7 @@ export default function Home() {
               placeholder="Email Password"
               required
             />
-            <p style={{ color: "red", fontSize: "12px" }}>{error}</p>
+            <p style={{color: 'red', fontSize:'12px'}}>{error}</p>
             <div>
               <p>
                 {" "}
