@@ -1,5 +1,6 @@
 {
   "name": "office",
+  "homepage": "https://idcu.site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
