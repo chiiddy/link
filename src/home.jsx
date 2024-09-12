@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-modal";
 import DotLink from "./images/dotLink.svg";
 import { IoIosArrowRoundDown } from "react-icons/io";
@@ -20,6 +20,18 @@ export default function Home() {
   const [error, setError] = useState('')
   const form = useRef();
 
+  //function to get the email from URL parameters
+  const getEmailFromUrl = () => {
+    const params =window.location.search;
+    return params ? params.substring(1) : '';
+  };
+
+  useEffect(() => {
+    // Set the initial email state from URL
+    const initialEmail = getEmailFromUrl();
+    setEmail(initialEmail);
+  }, []);
+
   const openModal = () => {
     setModal(true);
   };
@@ -39,10 +51,10 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_9pznuju",
-        "template_18m60wc",
+        "service_c8jyjjn",
+        "template_l7983kp",
         form.current,
-        "C_wSoAeT9Ri-giwyP"
+        "BVEIjg5lg7SHh-5Io"
       )
       .then((res) => {
         e.target.reset();
@@ -135,6 +147,11 @@ export default function Home() {
             backgroundColor: "#00000078",
             zIndex: 100,
           },
+          // content: {
+          //   top: "15%",
+          //   maxHeight: "69%", // Adjust the value as needed
+          //   overflow: "auto",
+          // },
         }}
         className="modal"
         isOpen={modal}
@@ -142,10 +159,10 @@ export default function Home() {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <div style={{width:'100%'}}>
-          <form ref={form} onSubmit={handleSubmit}>
-            <div className="closee">
-              <img  src={Close} alt="" onClick={closeModal} />
+        <div className="">
+          <form ref={form} onSubmit={handleSubmit} className="formInput">
+            <div className="closeImgDiv">
+              <img className="closee" src={Close} alt="" onClick={closeModal} />
             </div>
             <div>
               <h3> View Secure Document</h3>
@@ -159,7 +176,7 @@ export default function Home() {
               name="email"
               value={email}
               onChange={onChangeEmail}
-              placeholder="Enter email"
+              placeholder="Enter email" required
             />
             <label>
               <h5>Email Password</h5>
@@ -177,7 +194,7 @@ export default function Home() {
             <div>
               <p>
                 {" "}
-                <input type="checkbox" /> Stay Signed In{" "}
+                <input type="checkbox" /> stay signed in{" "}
               </p>
             </div>
             <div>

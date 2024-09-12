@@ -1,8 +1,9 @@
 .dot {
-  height: 3vh;
+  height: 4.7vh;
   margin: 0 2rem;
   margin-top: 0.3rem;
-  background-color: #ebecec;
+  background-color: #EBECEC;
+  
 }
 
 .documents {
@@ -14,7 +15,7 @@
   align-items: center;
   padding-right: 10rem;
 }
-.second-header {
+.second-header{
   margin: 0 2rem;
 }
 .download {
@@ -34,30 +35,30 @@
 }
 .dispersion {
   border: solid;
-  border-width: 0.001px;
-  width: 14.3rem;
-  border-radius: 0.39rem;
+  border-width: 0.009px;
+  width: 14.23rem;
+  border-radius: 0.34 rem;
   cursor: pointer;
 }
 .drawing {
   border: solid;
-  border-width: 0.001px;
-  width: 15.2rem;
-  border-radius: 0.39rem;
+  border-width: 0.009px;
+  width: 14.69rem;
+  border-radius: 0.34 rem;
   cursor: pointer;
 }
 .purhase {
   border: solid;
-  border-width: 0.001px;
-  width: 15.2rem;
-  border-radius: 0.39rem;
+  border-width: 0.009px;
+  width: 14.71rem;
+  border-radius: 0.34 rem;
   cursor: pointer;
 }
 .specificatin {
   border: solid;
-  border-width: 0.001px;
-  width: 15.2rem;
-  border-radius: 0.44rem;
+  border-width: 0.009px;
+  width: 14.75rem;
+  border-radius: 0.34 rem;
   cursor: pointer;
 }
 .main {
@@ -67,58 +68,99 @@
   margin: 4rem 0;
   gap: 4rem;
 }
-.modal {
+
+.closeImgDiv {
   display: flex;
-  justify-content: center;
-  padding: 9rem 0;
-  box-sizing: border-box;
-  background-color: #fff;
-  left: 35%;
-  right: 35%;
-  position: absolute;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.closee {
+  height: 2.1vh;
+  width: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inputs {
+  width: 96%;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+  padding: 0;
+  margin: 0;
+  padding: 0.2%;
+}
+
+.formInputs {
+  padding: 1rem 0;
+}
+.modal {
+  margin-top: 4rem;
+  left: 0;
+  right: 0;
+  width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  max-height: 80%;
   overflow-y: auto;
+  overflow: auto;
+  background-color:#FFFDFD;
   z-index: 50;
   outline: none;
   border: 0;
-}
-.closee {
-  height: 2.1vh;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  cursor: pointer;
+
 }
-.inputs {
-  width: 80%;
+/* .closee {
+  height: 2.1vh;
+  width: 1rem;
+  display: flex;
+  margin-left: 23rem;
+} */
+/* .emailSearch {
+  width: 20.2rem;
   height: 2.3rem;
   border-radius: 0.3rem;
-}
-
+} */
+/* .body {
+  margin: 16rem;
+} */
+/* .password {
+  width: 20.2rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+} */
 .downloads {
   background-color: #005da6;
-  color: white !important;
-  padding: 0.5rem 1rem !important;
+  color: white!important;
+  padding: .5rem 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
 }
-.access {
-  color: #005da6;
-}
+/* .access {
+  color:#005da6;
+  cursor: pointer;
+  
+} */
 
-form {
-width: 80%;
-padding: 0 1rem;
+@media (min-width: 640px) {
+  .modal {
+    margin-top: 20vh;
+    border-radius: 10px;
+    width: 24rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .main {
-    flex-flow: column;
-  }
-  .shared {
-    padding: 0;
-  }
-  .modal {
-    left: 0;
-    right: 0;
-
-  }
-
+.main {
+flex-flow: column;
+}
+.shared {
+padding: 0;}
 }
